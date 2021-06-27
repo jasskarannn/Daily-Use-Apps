@@ -1,3 +1,4 @@
+// this script wasn't the final version used in the project
 require("chromedriver");
 let fs = require('fs');
 const { connected } = require("process");
