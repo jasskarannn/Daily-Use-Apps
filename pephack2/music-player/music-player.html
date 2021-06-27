@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Music Player</title>
+    <link rel = "stylesheet" href = "./music-style.css">
+</head>
+<body>
+    <div class = "trans-on overlay" id = "overlay-layer">
+        <div class = "container">
+        <div class = "title-bar">The Music Player App
+            <img src = "pics/musicIcon.png" height = "40" width="40" class = "iconimg">
+            <form  action= "media.js" method="get" target="_blank">
+                <input class = "search-bar" type="text" placeholder="Search..">
+                <input type="submit" value="Go" id = "submit-btn">
+            </form> 
+        </div>
+        <div class = "center-container">
+              <div class = "recent-music">JUMP BACK IN..
+                  <div class = "recent-music-1">
+                    <span id = "recent-music-1-details">Foreigns by AP Dhillon</span>
+                      <img src = "pics/foreignsdp.jpeg">
+                      <audio id = "o-song-1-play">
+                        <source src="songs/foreigns-ap.mp3" type="audio/mpeg">
+                      </audio>
+ 
+                  </div>
+                  <div class = "recent-music-2">
+                    <span id = "recent-music-2-details">US by Sidhu Moosewala</span>
+                    <img src = "pics/moosedp.jpeg">
+                    <audio id = "o-song-2-play">
+                        <source src="songs/us-sidhu.mp3" type="audio/mpeg">
+                      </audio>
+
+                  </div>
+                  <div class = "recent-music-3">
+                    <span id = "recent-music-3-details">Landed by Drake</span>
+                    <img src = "pics/drakedp.jpeg">
+                    <audio id = "o-song-3-play">
+                        <source src="songs/landed-drake.mp3" type="audio/mpeg">
+                      </audio>
+ 
+                  </div>
+                  <div class = "recent-music-4">
+                    <span id = "recent-music-4-details">Touch The Sky by Future</span>
+                    <img src = "pics/futuredp.jpeg">
+                    <audio id = "o-song-4-play">
+                        <source src="songs/touchTheSky-future.mp3" type="audio/mpeg">
+                      </audio>
+
+                  </div>
+                  <div class = "recent-music-5">
+                    <span id = "recent-music-5-details">Papercut by Linkin Park</span>
+                    <img src = "pics/lphtdp.jpeg">
+                    <audio id = "o-song-5-play">
+                        <source src="songs/papercut-lp.mp3" type="audio/mpeg">
+                      </audio>
+
+                  </div>
+                  <div class = "recent-music-5">
+                    <span id = "recent-music-5-details">Papercut by Linkin Park</span>
+                    <img src = "pics/living.jpeg">
+                    <audio id = "o-song-5-play">
+                        <source src="songs/papercut-lp.mp3" type="audio/mpeg">
+                      </audio>
+
+                  </div>
+                 
+              </div>
+              <div class = "recent-artists">ARTISTS YOU LIKE
+                  <div class ="recent-artists-circles">
+                      <div class = "recent-artist-1">
+                          <img src = "pics/ggdp.jpeg">
+                      </div>
+                      <div class = "recent-artist-2">
+                        <img src = "pics/mgkdp.jpeg">
+                    </div>
+                    <div class = "recent-artist-3">
+                        <img src = "pics/future1dp.jpeg">
+                    </div>
+                    <div class = "recent-artist-4">
+                        <img src = "pics/prophecdp.jpeg">
+                    </div>
+                    <div class = "recent-artist-5">
+                        <img src = "pics/chesterdp6.jpg">
+                    </div>
+                    <div class = "recent-artist-6">
+                        <img src = "pics/sidhudp.jpeg">
+                    </div>
+                  </div>
+                  
+              </div>
+
+              <div class = "recent-playlists">PLAYLISTS BY YOU
+                  <div class="recent-playlist-1">Gym Playlist</div>
+                  <div class="recent-playlist-2">Play Radio</div>
+                  <div class="recent-playlist-3">Hip Hop Playlist</div>
+              </div>
+
+                <div id = "hide-playing">
+                  <div class ="hide-playing-now">
+                      <div class = "hide-song-name">In The End</div>
+                      <div class = "hide-artist-name">Linkin Park</div>
+                  </div>
+                  <div class = "hide-album-cover">
+                     
+                      <img src ="pics/lpdp.jpeg">
+                  </div>
+                </div>
+                <div class = "show-animation"></div>
+              
+        </div>
+
+        <div class = "controller" id = "controller-id"> 
+        
+            <div class = "music-controller" id = "music-controller-icons">
+                <div class = "material-icons skip-previous">skip_previous</div>
+                <div class = "material-icons pause" id = "pauseSong">pause</div>
+                <div class = "material-icons skip-next">skip_next</div>
+            </div>
+            <div class = "seek-controller">
+                <span class = "seek-start-time">0:00</span>
+                <div class = "seek-song">
+                    <input type="range" min="0" max="100" value="0" class="slider" step = "1" id="mySongSeek">
+                </div>
+                <span id = "seek-end-time">3:00</span>
+                
+            </div>
+            <div class = "seek-volume">
+                <input type="range" min="0" max="100" value="100" class="slider" step ="1" id="myVolume">
+                <h5>Volume Level :<span id = "volLevel"></span></h5>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class = "songs-list-modal" id = "songs-modal-id">
+        <div class = "songs-list-titleabar">RADIO</div>
+        <div class = "songs-list-modal-container">
+        </div>
+    </div>
+
+
+
+    <script src = "./music-media.js"></script>
+    <script src="./music-script.js"></script>  
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+   
+    <title>My Daily Use Apps</title>
+</head>
+<body onload="initClock()"> 
+    
+    <div class = "container">
+        <section class = "one">
+            <canvas id="canvas1"></canvas>
+        <div class="title-clock-quotes">
+        <div class="title-class">
+            <h1>My Daily Use Apps</h1>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" id = "close-btn"onclick="closeNav()">&times;</a>
+            <a href="#" class = "material-icons md-60 weather-app" onclick="toWeatherApp()">nights_stay<span>WEATHER</span></a>
+            <a href="#" class="material-icons md-60 music-player-icon" onclick="toMusicApp()">radio<span>MUSIC</span></a>
+            <a href="#" class="material-icons md-60 expense-tracker-icon" onclick="toExpenseApp()">price_check<span>EXPENSES</span></a>
+        </div>
+          <div id="main">
+            <span class = "material-icons expander-icon"id = "menu-expander2"style="font-size:30px;cursor:pointer" onclick="openNav()">menu</span>
+          </div>
+        <!--center clock-->
+            <div class="datetime">
+                <div class="date">
+                    <span id="dayname">Day</span>,
+                    <span id="month">Month</span>
+                    <span id="daynum">00</span>,
+                    <span id="year">Year</span>
+                </div>
+                <div class="time">
+                    <span id="hour">00</span>:
+                    <span id="minutes">00</span>:
+                    <span id="seconds">00</span>
+                    <span id="period">AM</span>
+                </div>
+                 <!--center clock-->
+            </div>
+    
+        </div>
+        <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </section>
+        <section class = "two">
+            <div class="quotes">
+                <span id = "quote-id">Hi</span>
+            </div>
+            <div class="tasks">
+                <span>What is your main focus for today?</span>
+                <input placeholder="Add new task.." type="text" id = "newinputbox"/>
+            </div>
+            <div class="my-tasks">
+                <ul id = "ulid">
+                </ul>
+            </div>
+        </section>
+        <section class = "three">
+            <h1 class = "canvas-title">My NoteBook</h1>
+            <canvas id="canvas" height="500" width="400"></canvas>
+        </section>
+    </div>   
+    
+</body>
+<script src="clock-script.js"></script>
+</html>

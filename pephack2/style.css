@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* container is layer over the body */
+  .container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    scroll-snap-type: y mandatory;
+    scrollbar-color: transparent;
+    overflow-y: scroll;
+    background: #10101E;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  section{
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .one{
+    display: flex;
+    justify-content: center;
+  }
+  .two{
+    position: relative;
+    background: linear-gradient(to top, #db20b3 10%, #10101e 88%);
+  }
+  .three{
+    background: linear-gradient(to bottom, #db20b1 34%, #10101e 95%);
+    position: relative;
+  }
+  /* title */
+  .title-class{
+    /* absolute position to relative position of parent -> container */
+      position: absolute; 
+      top : 10vh;
+      font-size: 50px;
+      left : 32vw;
+      color : #fff;
+  }
+  /* title */
+
+  /* clock css */
+  .datetime{
+    position: absolute;
+    top : 25vh;
+    right : 34vw; 
+    color: #fff;
+    background: #10101E;
+    font-family: "Segoe UI", sans-serif;
+    height: 200px;
+    width: 32vw;
+    padding: 15px 10px;
+    border: 2px solid #db20b3;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+  
+  .datetime:hover{
+    background: #10101E;
+    box-shadow: 0 0 60px #db20b3;
+  }
+  
+  .date{
+    font-size: 30px;
+    font-weight: 900px;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+  
+  .time{
+    font-weight :100;
+    font-size: 90px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .time span:not(:last-child){
+    position: relative;
+    margin: 0 6px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+  
+  .time span:last-child{
+    color : #db20b3;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+  }
+
+  /* clock css */
+
+  /* quotes */
+
+  .quotes{
+      position: absolute;
+      color : #fff;
+      top : 30vh;
+      font-size: 20px;
+      font-style: italic;
+  }
+  /* quotes */
+
+  /* tasks */
+
+  .tasks{
+      display: flex;
+      position: absolute;
+      top : 40vh;
+      justify-content: center;
+      align-items: center;
+      color : #fff;
+      font-size : 48px;
+      font-weight: 600;
+  }
+
+  #newinputbox{
+      position: absolute;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-style: italic;
+      top : 10vh;
+      height: 30px;
+      width: 300px;
+      color : #fff;
+      background-color: transparent;
+      border: transparent;
+      border-bottom: 1px solid #fff;
+      font-size: large;
+      outline: none;
+  }
+  
+  .my-tasks{
+    position: absolute;
+    top : 60vh;
+    height: 30vh;
+    width: 30vw;
+    padding-left: 5rem;
+    padding-top: 1rem;
+    font-size: 20px;
+    /* background-color: red; */
+  }
+
+  #ulid{
+    position: absolute;
+    left : 10vw;
+  }
+
+  /* tasks end*/
+
+  /* all apps */
+
+  .all-apps{
+      color : #fff;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      position: fixed;
+      bottom : 10vh;
+  }
+
+  .music-player, .cricket-scores, .expense-tracker{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+    margin: auto;
+    padding : 2rem;
+  }
+  /* all apps end*/
+
+
+  /* side nav  */
+  .sidenav {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left : 0;
+    background-color: #db20b3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+  }
+  
+  .sidenav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+    padding-left: 10px;
+    text-decoration: none; 
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  #close-btn{
+    top : -71px;
+    right : -40px;
+  }
+
+  .sidenav a:hover {
+    color: #fff;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  #main {
+    position: absolute;
+    top : 10px;
+    left : 20px;
+    transition: margin-left .5s;
+    padding: 5px;
+    color : #fff;
+}
+
+  /* side nav end */
+
+/* material icons class font changes for nav */
+.material-icons.md-72{
+    font-size: 72px;
+}
+.material-icons.md-60{
+  font-size: 60px;
+}
+/* material icons class font changes for nav ends*/
+
+/* tasks list : visible tasks which are/will be added */
+.tasks-list{
+  position: fixed;
+  color : #fff;
+  top : 65vh;
+  height: 30vh;
+  width: 30vw;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.i-li{
+  display: flex;
+  flex-direction: column;
+
+}
+.i-task, .delete-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-left: 6rem;
+  font-size: larger;
+}
+.delete-btn{
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-radius: 50%;
+  height : 2rem;
+  /* width: 2rem; */
+  color : #10101E;
+}
+
+.material-icons.delete-btn{
+  /* color : #fff; */
+}
+
+
+
+.arrow{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.arrow span{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #db20b3;
+  border-right: 5px solid #db20b3;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+  animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+  animation-delay: -0.4s;
+}
+@keyframes animate {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+  }
+}
+
+.canvas-title{
+  position: absolute;
+  top : 10vh;
+  color : #fff;
+  font-size: 30px;
+}
