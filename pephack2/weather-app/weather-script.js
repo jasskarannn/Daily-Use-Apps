@@ -1,5 +1,9 @@
 let weather = {
     "apiKey" : "abc",
+     search : function(){
+        var cityName = document.querySelector(".search-bar input").value;
+        this.getWeather(cityName);
+    }
     getWeather : function(city){
         fetch(
             "https://api.openweathermap.org/data/2.5/weather?q=" + city +
@@ -19,11 +23,8 @@ let weather = {
         document.querySelector(".humidity").innerText = "Humidity : " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed : " + speed;
         document.querySelector(".icon img").src = "https://openweathermap.org/img/wn/"+ icon + ".png";
-    },
-    search : function(){
-        var cityName = document.querySelector(".search-bar input").value;
-        this.getWeather(cityName);
     }
+   
 }
 
 document.querySelector(".search-bar .search-btn").addEventListener("click", function(){
